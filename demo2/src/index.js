@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import './style.css';
 import Avatar from './avatar.png';
+import Data from './data.xml';
 
 function component() {
     var element = document.createElement('div');
@@ -14,6 +15,8 @@ function component() {
     myAvatar.src = Avatar;
 
     element.appendChild(myAvatar);
+
+    console.log(Data);
 
     return element;
 }

@@ -16,11 +16,39 @@ module.exports = {
                 ]
             },
             {
-                test:/\.(png|svg|jpg|gif)$/,
-                use:[
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
                     "file-loader",
-                    // "image-webpack-loader",
-                    'url-loader',
+                    // {
+                    //     loader: 'image-webpack-loader',
+                    //     options: {
+                    //         bypassOnDebug: true,
+                    //     },
+                    // },
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
+                ]
+            },
+            {
+                test: /\.(cvs|tsv)$/,
+                use: [
+                    'csv-loader'
+                ]
+            },
+            {
+                test: /\.xml$/,
+                use: [
+                    'xml-loader'
                 ]
             }
         ]
